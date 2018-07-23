@@ -1,18 +1,15 @@
+# Uses python3
 import sys
 
 def get_fibonacci_last_digit(n):
     if n <= 1:
         return n
 
-    previous = 1
+    previous = 0
     current  = 1
-    last = 0
-
     for _ in range(n - 1):
-        previous, current = current, previous + current
-        last = previous % 10
-
-    return last
+        previous, current = current, (previous + current) % 10
+    return current
 
 if __name__ == '__main__':
     input = sys.stdin.read()
